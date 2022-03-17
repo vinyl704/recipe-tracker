@@ -1,6 +1,7 @@
 {
   "name": "recipe-app",
   "version": "0.1.0",
+  "homepage": "https://vinyl704.github.io/recipe-tracker/",
   "private": true,
   "dependencies": {
     "react": "^16.13.1",
@@ -10,7 +11,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1"
+    "@testing-library/user-event": "^7.2.1",
+    "gh-pages": "^3.2.3"
   },
   "scripts": {
     "build": "react-scripts build",
@@ -19,6 +21,8 @@
     "docker:stop": "docker stop $(docker ps -q)",
     "docker:test": "docker run -t  thinkful-ed/zid-fe-react-state-management-xx-assignment npm test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "start:solution": "npm run -it docker:build && npm run docker:run",
     "test": "react-scripts test",
