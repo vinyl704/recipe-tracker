@@ -16,8 +16,8 @@ header {
 
 /* typography */
 
-html {
-  font-family: "Open Sans",'helvetica neue', sans-serif;
+html,input,textarea {
+  font-family: 'helvetica neue', sans-serif;
 }
 
 h1{
@@ -38,7 +38,7 @@ td {
   letter-spacing: 1px;
   overflow-x:hidden;
   overflow-y:hidden;
-  font-size: 12px;
+  font-size: 16px;
   padding: 10px;
   text-align: center;
 }
