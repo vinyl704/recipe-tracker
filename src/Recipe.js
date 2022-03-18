@@ -1,13 +1,14 @@
 import React from 'react';
 
 export default function Recipe({recipe,onDeleteClick}){
+    const {name,cuisine,photo,ingredients,preparation,key} = recipe;
     return(
-        <tr key={recipe.key}>
-            <td className='content_td'><p>{recipe.name}</p></td>
-            <td className='content_td'><p>{recipe.cuisine}</p></td>
-            <td className='content_td'><img src={recipe.photo} alt=""/></td>
-            <td className='content_td'><p>{recipe.ingredients}</p></td>
-            <td className='content_td'><p>{recipe.preparation}</p></td>
+        <tr key={key}>
+            <td className='content_td'><p>{name}</p></td>
+            <td className='content_td'><p>{cuisine}</p></td>
+            <td className='content_td'><img src={photo} alt=""/></td>
+            <td className='content_td'><p>{ingredients}</p></td>
+            <td className='content_td'><p>{preparation}</p></td>
             <td className='content_td'><button name="delete" onClick={onDeleteClick}>Delete</button></td>
         </tr>
     )

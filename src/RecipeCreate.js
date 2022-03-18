@@ -20,7 +20,7 @@ function RecipeCreate({createRecipe}) {
     createRecipe(formData)
     setFormData({...initialFormState})
   }
-  const handleChange = (e) =>{setFormData({...formData,[e.target.name]:e.target.value})}
+  const handleChange = ({target}) =>{setFormData({...formData,[target.name]:target.value})}
   
   return (
     <form name="create" onSubmit={handleSubmit}>
