@@ -54,10 +54,10 @@ function App() {
 
   return (
     <div className="App">
+      {alert("Using the save file function saves your list to your browser/device")}
       <header>
         <h1>Delicious Food Recipes</h1>
       </header>
-      
         <RecipeList
           recipes={recipes}
           setRecipes={setRecipes}
