@@ -56,6 +56,13 @@ button{
   align-items: center;
   justify-content: center;
 }
+button{
+  margin:10px auto;
+  border-radius: 10px;
+  border:1px solid black;
+  padding:7px;
+  background-color: white;
+}
 
 button[name="save"],[name="clear"],[name="factoryReset"]{
   padding:10px;
