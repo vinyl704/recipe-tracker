@@ -4,13 +4,16 @@ import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
 import RecipeData from "./RecipeData";
 
+
 function App() {
-  let data;
-  if (!localStorage.recipes) {
-    data = RecipeData;
+  let [data,setData]=useState(()=>{
+    if (!localStorage.recipes) {
+    return RecipeData;
   } else {
-    data = JSON.parse(localStorage.getItem("recipes"));
+    return JSON.parse(localStorage.getItem("recipes"));
   }
+  });
+  
   const [recipes, setRecipes] = useState(data);
 
   const createRecipe = (recipe) =>
@@ -31,36 +34,48 @@ function App() {
       })
     );
 
-  function handleClear() {
+  function handleClear(e) {
+    e.preventDefault()
     localStorage.setItem("recipes", "[]");
     setRecipes(()=>JSON.parse(localStorage.getItem("recipes")))
   }
+
   const handleSave = (e) => {
     e.preventDefault();
     localStorage.setItem("recipes", JSON.stringify(recipes));
   };
+
+  const handleFactoryReset = (e) =>{
+    e.preventDefault();
+    localStorage.removeItem('recipes')
+    setRecipes(data)
+
+  }
 
   return (
     <div className="App">
       <header>
         <h1>Delicious Food Recipes</h1>
       </header>
-      {!localStorage.recipes !== undefined && (
+      
         <RecipeList
           recipes={recipes}
           setRecipes={setRecipes}
           editRecipe={editRecipe}
-          deleteRecipe={deleteRecipe}
+          deleteRecipe={deleteRecipe} 
         />
-      )}
+     
       <RecipeCreate createRecipe={createRecipe} />
+        
       <div id="button-container">
-        <button name="save" onClick={handleSave}>
+        <button name="save"onClick={handleSave}>
           Save List
         </button>
-        
         <button name="clear" onClick={handleClear}>
           Clear List
+        </button>
+        <button name="factoryReset" onClick={handleFactoryReset}>
+          Facory Reset
         </button>
       </div>
     </div>

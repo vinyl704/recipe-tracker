@@ -11,7 +11,6 @@ export default function Recipe({idx,editRecipe,recipes,setRecipes,recipe,onDelet
     
     const editSwitchHandler = () => setEdit(!edit);
     const editSubmitHandler = () => editRecipe([idx,editedRecipe])
-    //const newRecipe = {name,cuisine,photo,ingredients,preparation,idx};
     return(
         !edit?(
         <tr key={idx}>
@@ -21,7 +20,7 @@ export default function Recipe({idx,editRecipe,recipes,setRecipes,recipe,onDelet
             <td className='content_td'><p>{ingredients}</p></td>
             <td className='content_td'><p>{preparation}</p></td>
             
-            <td className='content_td' style={{display:"flex",flexWrap:"wrap",flexDirection:"column", width:"100%",alignItems:"center",margin:"auto"}} >
+            <td className='actionButtons content_td' style={{display:"flex",flexWrap:"wrap",flexDirection:"column", width:"100%",alignItems:"center",margin:"auto"}} >
                 <button name="edit" id={idx} onClick={editSwitchHandler}>Edit</button>
                 <button name="delete" onClick={onDeleteClick}>Delete</button>    
             </td>
@@ -39,8 +38,7 @@ export default function Recipe({idx,editRecipe,recipes,setRecipes,recipe,onDelet
                 <td className='content_td'><textarea name="preparation" value={editedRecipe.preparation} onChange={handleChange}/></td>
                 <td className='content_td' style={{display:"flex",flexWrap:"wrap",flexDirection:"column", width:"100%",alignItems:"center",margin:"auto"}} >
                     <button name="submit" id={idx} onClick={(e)=>{
-                        //console.log(editedRecipe.idx)
-                        //alert(editedRecipe.photo)
+                     
                         editSwitchHandler(e)
                         editSubmitHandler(idx,editedRecipe)
                         }}>Submit</button>
