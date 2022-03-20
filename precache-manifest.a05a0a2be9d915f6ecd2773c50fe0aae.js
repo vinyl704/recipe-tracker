@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b322d51f64ab0e8d9e559db2ea04217",
+    "revision": "7eac4fe7d6dbbdd49689cdad78939d62",
     "url": "/recipe-tracker/index.html"
   },
   {
-    "revision": "117701613e0028d001f9",
-    "url": "/recipe-tracker/static/css/main.65abbbec.chunk.css"
+    "revision": "764380e374fd5aae54fe",
+    "url": "/recipe-tracker/static/css/main.acb9bf91.chunk.css"
   },
   {
     "revision": "58bb921ee85cd1b0e914",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/recipe-tracker/static/js/2.22df68ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "117701613e0028d001f9",
-    "url": "/recipe-tracker/static/js/main.43aa370a.chunk.js"
+    "revision": "764380e374fd5aae54fe",
+    "url": "/recipe-tracker/static/js/main.2c66b5b0.chunk.js"
   },
   {
     "revision": "982fa5ef2b198456df9f",
