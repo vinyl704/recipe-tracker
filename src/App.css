@@ -73,6 +73,7 @@ button[name="save"],[name="clear"],[name="factoryReset"]{
   margin:auto;
   font-size: 14px;
   font-weight: 500;
+  min-width: fit-content;
 }
 button[name="factoryReset"]{
   color:red;
