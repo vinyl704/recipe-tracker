@@ -7,10 +7,10 @@ import RecipeData from "./RecipeData";
 
 function App() {
   let [data,setData]=useState(()=>{
-    if (!localStorage.recipes) {
+    if (!window.localStorage.recipes) {
     return RecipeData;
   } else {
-    return JSON.parse(localStorage.getItem("recipes"));
+    return JSON.parse(window.localStorage.getItem("recipes"));
   }
   });
   
@@ -36,19 +36,19 @@ function App() {
 
   function handleClear(e) {
     e.preventDefault()
-    localStorage.setItem("recipes", "[]");
-    setRecipes(()=>JSON.parse(localStorage.getItem("recipes")))
+    window.localStorage.setItem("recipes", "[]");
+    setRecipes([])
   }
 
   const handleSave = (e) => {
     e.preventDefault();
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+    window.localStorage.setItem("recipes", JSON.stringify(recipes));
   };
 
   const handleFactoryReset = (e) =>{
-    e.preventDefault();
-    localStorage.removeItem('recipes')
-    setRecipes(data)
+    //e.preventDefault();
+    window.localStorage.removeItem('recipes')
+    setRecipes(RecipeData)
 
   }
 

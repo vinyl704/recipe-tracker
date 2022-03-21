@@ -127,13 +127,14 @@ input[name="name"],input[name="cuisine"]{
 input[name="photo"]{
   width:85%;
 }
-textarea{
-  width:65%;
-}
 
 input,textarea{
   border-radius:5px;
+  border:1px solid black;
   padding:3px;
+}
+textarea{
+  padding:0;
 }
 img{
   object-fit: scale-down;
